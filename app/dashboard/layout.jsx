@@ -5,10 +5,11 @@ import Footer from "../ui/dashboard/footer/Footer";
 export default function Lauout({ children }) {
   return (
     <div className="flex ">
-      <div className="w-1/5  p-5">
+      <div className="hidden lg:flex w-1/5   p-5">
         <Sidebar />
       </div>
-      <div className="flex-1 p-5">
+      <div className="flex-1 p-5 relative h-[100vh] ">
+        
         <Navbar />
         {children}
         <Footer />
