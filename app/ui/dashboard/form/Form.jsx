@@ -1,18 +1,17 @@
 import Link from 'next/link';
 import React from 'react'
-import { FaInstagram, FaInstagramSquare, FaLinkedin, FaMagic, FaPencilAlt, FaShareAlt, FaTwitter } from "react-icons/fa";
+import { FaInstagramSquare, FaLinkedin, FaMagic, FaPencilAlt, FaShareAlt, FaTwitter } from "react-icons/fa";
 
 const Form = () => {
     return (
         <>
             <div className=" flex justify-center items-center w-full ">
-                {/*//! <!-- COMPONENT CODE --> */}
-                <div className="flex gap-5 items-stretch justify-between container  my-4 px-4 lg:px-20">
+                <div className="flex flex-col md:flex-row gap-5 items-stretch justify-between container  my-4">
 
-                    <div className="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
+                    <div className="w-full px-8 my-4  lg:w-8/12 rounded-2xl shadow-2xl">
                         {/*//! عنوان فرم */}
                         <div className="flex">
-                            <h1 className="font-bold uppercase text-3xl md:text-5xl">میخوای دقیقا چه محتوایی بسازی؟</h1>
+                            <h1 className="font-bold text-white uppercase text-3xl md:text-5xl">میخوای دقیقا چه محتوایی بسازی؟</h1>
                         </div>
 
                         {/*//! فیلدهای ورودی */}
@@ -25,7 +24,7 @@ const Form = () => {
 
                         {/*//! انتخاب لحن و سبک */}
                         <div className="my-4">
-                            <label className="block font-bold text-gray-700">لحن محتوا رو انتخاب کنید</label>
+                            <label className="block font-bold text-white/85">لحن محتوا رو انتخاب کنید</label>
                             <select className="input-Form mt-2">
                                 <option>رسمی</option>
                                 <option>دوستانه</option>
@@ -36,25 +35,25 @@ const Form = () => {
 
                         {/* //! انتخاب طول محتوا */}
                         <div className="my-4">
-                            <label className="block font-bold text-gray-700">طول محتوا:</label>
+                            <label className="block font-bold text-white/85">طول محتوا:</label>
                             <div className="flex space-x-4 mt-2">
                                 <label className="flex items-center">
                                     <input type="radio" name="length" value="short" className="mx-2" />
-                                    <span>کوتاه</span>
+                                    <span className='text-white/85'>کوتاه</span>
                                 </label>
                                 <label className="flex items-center">
                                     <input type="radio" name="length" value="medium" className="mx-2" />
-                                    <span>متوسط</span>
+                                    <span className='text-white/85'>متوسط</span>
                                 </label>
                                 <label className="flex items-center">
                                     <input type="radio" name="length" value="long" className="mx-2" />
-                                    <span>بلند</span>
+                                    <span className='text-white/85'>بلند</span>
                                 </label>
                             </div>
                         </div>
 
-                        <div className="my-2 w-1/2 lg:w-1/4">
-                            <button className="uppercase text-sm font-bold tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <div className="my-2">
+                            <button className="uppercase text-sm font-bold tracking-wide bg-blue-900 hover:bg-bg border border-blue-900 hover:border-white duration-150 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
                                 ایجاد بلاگ
                             </button>
                         </div>
@@ -63,16 +62,16 @@ const Form = () => {
 
                     <div className="w-full lg:w-2/6 px-8 py-12 ml-auto bg-blue-900 rounded-2xl">
                         <div className="flex flex-col text-white">
-                            {/* عنوان اصلی */}
+                            {/*//! عنوان اصلی */}
                             <h1 className="font-bold uppercase text-4xl my-4">مغز هوشمند</h1>
 
-                            {/* توضیحات ابزار */}
+                            {/*//! توضیحات ابزار */}
                             <p className="text-gray-400">
                                 به راحتی و با چند کلیک، محتوای بلاگ حرفه‌ای تولید کنید!
                                 ابزار ما به شما کمک می‌کند تا بلاگ‌های جذاب و متناسب با نیاز کسب‌وکارتان بسازید.
                             </p>
 
-                            {/* ویژگی‌های ابزار */}
+                            {/*//! ویژگی‌های ابزار */}
                             <div className="flex items-start gap-3 my-4">
                                 <div className="flex flex-col">
                                     <FaMagic className="size-8 mt-3" />
@@ -109,7 +108,7 @@ const Form = () => {
                                 </div>
                             </div>
 
-                            {/* لینک‌های شبکه‌های اجتماعی */}
+                            {/*//! لینک‌های شبکه‌های اجتماعی */}
                             <div className="flex my-4">
                                 <Link href="#" target="_blank" rel="noreferrer" className="rounded-full flex items-center justify-center bg-white h-8 w-8  mx-1 text-center pt-1">
                                     <FaTwitter className='text-blue-900 size-6' />
