@@ -34,3 +34,9 @@ a {
 .dark {
   @apply bg-bg text-white;
 }
+
+.input-Form {
+  @apply w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+
