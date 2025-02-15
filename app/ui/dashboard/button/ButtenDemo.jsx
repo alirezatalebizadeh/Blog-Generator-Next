@@ -23,9 +23,9 @@ const ButtenDemo = ({ title }) => {
     return (
         <button onClick={toggleTheme} className="flex items-center gap-1 text-textSoft font-bold text-[16px]">
             {isDarkMode ? <MdLightMode className='size-7 dark:text-white' /> : <MdOutlineDarkMode className='size-7  dark:text-white' />}
-            {title && <span>
+            {title && <p>
                 تغییر حالت
-            </span>}
+            </p>}
 
         </button>
     )

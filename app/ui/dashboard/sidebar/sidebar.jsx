@@ -41,9 +41,10 @@ export default function Sidebar() {
           <ButtenDemo title="تغییر حالت" />
         </li>
       </ul>
-      <button className="flex items-center gap-[10px] cursor-pointer rounded-[10px] p-5 my-[5px] mx-0 border-none text-text hover:bg-[#2e374a] w-full">
+      <button className="flex items-center gap-[10px] cursor-pointer rounded-[10px] p-5 my-[5px] mx-0 border-none t
+       hover:bg-[#2e374a] w-full">
         <MdLogout />
-        <span>خروج</span>
+        <p>خروج</p>
       </button>
     </div>
   );

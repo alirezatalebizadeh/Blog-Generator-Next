@@ -62,7 +62,6 @@ const Form = () => {
         console.log("داده‌های ارسال شده:", requestData);
 
         try {
-            await setGeneratedContent(`${<p className='mt-4 text-green-500'>در حال تولید محتوا... . لطفا صبر کنی</p>}`);
 
             const response = await fetch(apiUrl, {
                 method: "POST",
@@ -85,6 +84,14 @@ const Form = () => {
             console.log(generatedText);
 
             localStorage.setItem("generatedContent", generatedText);
+            setFormData({
+                title: "",
+                topic: "",
+                keywords: "",
+                audience: "",
+                tone: "رسمی",
+                length: "long"
+            });
 
         } catch (error) {
             console.error("خطا در درخواست:", error);
@@ -191,7 +198,7 @@ const Form = () => {
 
                         <h2 className="text-white font-bold text-xl">محتوای تولید شده:</h2>
                         {/* <p className="text-white/50 text-base mt-4">{generatedContent || "هنوز محتوایی تولید نشده است."}</p> */}
-                        <EditorDemo content={generatedContent}/>
+                        <EditorDemo content={generatedContent} />
                     </div>
 
                 </div >
