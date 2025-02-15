@@ -4,10 +4,10 @@ const Form = () => {
 
     const [generatedContent, setGeneratedContent] = useState("")
     const [formData, setFormData] = useState({
-        title: "گل نیلوفر",
-        topic: "گل نیلوفر چیه؟",
-        keywords: "گل،طبیعت",
-        audience: "دانشجو",
+        title: "",
+        topic: "",
+        keywords: "",
+        audience: "",
         tone: "رسمی",
         length: "long"
     })
