@@ -46,8 +46,8 @@ const Form = () => {
         const requestData = {
             model: "gpt-3.5-turbo-0125", // مدل موردنظر
             messages: [
-                { role: "system", content: "You are a helpful assistant." },
-                { role: "user", content: `عنوان: ${formData.title}\nموضوع: ${formData.topic}\nکلمات کلیدی: ${formData.keywords}\nمخاطب: ${formData.audience}\nلحن: ${formData.tone}\nطول محتوا: ${formData.length}` }
+                { role: "system", content: "You are a helpful assistant bot.you are a  generator blog .so popular and smart . i give you some paramet,after that you can make blog " },
+                { role: "user", content: ` .عنوان : ${formData.title}\nموضوع: ${formData.topic}\nکلمات کلیدی: ${formData.keywords}\nمخاطب: ${formData.audience}\nلحن: ${formData.tone}\nطول محتوا: ${formData.length}` }
             ]
         };
 
