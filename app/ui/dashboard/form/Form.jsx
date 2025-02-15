@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
+import EditorDemo from '../editor/Editor'
 const Form = () => {
 
     const [generatedContent, setGeneratedContent] = useState("")
@@ -44,11 +45,11 @@ const Form = () => {
 
         //! تبدیل داده‌های فرم به فرمت API
         const requestData = {
-            model: "gpt-3.5-turbo-0125", 
+            model: "gpt-3.5-turbo-0125",
             messages: [
                 {
                     role: "system",
-                    content: `You are a helpful assistant bot. You are a blog generator that is popular and smart. You can generate high-quality blogs based on the parameters provided. Pay close attention to the tone of the content, length of the blog, and all other parameters (title, topic, keywords, audience, etc.). Make sure the content aligns with the tone requested, follows the user's input accurately, and adjusts the length of the blog according to the specified length (short, medium, long).` 
+                    content: `You are a helpful assistant bot. You are a blog generator that is popular and smart. You can generate high-quality blogs based on the parameters provided. Pay close attention to the tone of the content, length of the blog, and all other parameters (title, topic, keywords, audience, etc.). Make sure the content aligns with the tone requested, follows the user's input accurately, and adjusts the length of the blog according to the specified length (short, medium, long).`
                 },
                 {
                     role: "user",
@@ -189,8 +190,8 @@ const Form = () => {
                     <div className="w-full lg:w-2/6 px-8 py-12 ml-auto bg-[#182237] rounded-2xl">
 
                         <h2 className="text-white font-bold text-xl">محتوای تولید شده:</h2>
-                        {/* {!generatedContent ? <p className='mt-4 text-green-500'>در حال تولید محتوا... . لطفا صبر کنی</p> : ""} */}
-                        <p className="text-white/50 text-base mt-4">{generatedContent || "هنوز محتوایی تولید نشده است."}</p>
+                        {/* <p className="text-white/50 text-base mt-4">{generatedContent || "هنوز محتوایی تولید نشده است."}</p> */}
+                        <EditorDemo content={generatedContent}/>
                     </div>
 
                 </div >
