@@ -1,25 +1,12 @@
 "use client";
-import { menuItems, navbarLink } from "@/data";
+import { navbarLink } from "@/data";
 import React, { useEffect, useState } from "react";
-import { MdLightMode, MdOutlineDarkMode, MdMenu, MdClose } from "react-icons/md";
+import { MdMenu, MdClose } from "react-icons/md";
 import Link from "next/link";
+import ButtenDemo from "../button/ButtenDemo";
 
 export default function Navbar() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const savedMode = localStorage.getItem("dark-mode") === "true";
-    setIsDarkMode(savedMode);
-    document.body.classList.toggle("dark", savedMode);
-  }, []);
-
-  const toggleTheme = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    localStorage.setItem("dark-mode", newMode);
-    document.body.classList.toggle("dark", newMode);
-  };
 
   return (
     <nav className="relative flex lg:hidden items-center justify-between p-5 rounded-[10px] bg-bgSoft">
@@ -53,9 +40,7 @@ export default function Navbar() {
       )}
 
       {/*//! دکمه تغییر تم */}
-      <button onClick={toggleTheme} className="text-2xl bg-transparent border-none">
-        {isDarkMode ? <MdLightMode /> : <MdOutlineDarkMode />}
-      </button>
+      <ButtenDemo />
     </nav>
   );
 }

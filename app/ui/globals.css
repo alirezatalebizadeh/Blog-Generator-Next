@@ -11,11 +11,63 @@
   padding: 0;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: "IRANYekanX-Regular";
+  src: url("/fonts/woff/IRANYekanX-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "IRANYekanX-Bold";
+  src: url("/fonts/woff/IRANYekanX-Bold.woff") format("woff");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b {
+  font-family: "IRANYekanX-Bold" !important;
+}
+
+a,
+p,
+span {
+  font-family: "IRANYekanX-Regular" !important;
+}
+/* رنگ پیش‌فرض برای تمام پاراگراف‌ها و تگ‌های h1 تا h6 */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  color: black; /* رنگ مشکی برای پیش‌فرض */
+}
+
+/* زمانی که تم تاریک فعال باشد */
+body.dark p,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark a,
+body.dark span
+ {
+  color: white; /* تغییر رنگ به سفید زمانی که تم تاریک فعال است */
+}
 
 body {
   background-color: var(--bg);
   color: var(--text);
   direction: rtl;
+  font-family: "IRANYekanX-Regular" !important;
 }
 h1,
 h2,
@@ -38,5 +90,3 @@ a {
 .input-Form {
   @apply w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
 }
-
-

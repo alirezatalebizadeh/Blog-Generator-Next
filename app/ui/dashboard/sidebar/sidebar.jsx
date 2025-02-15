@@ -4,6 +4,7 @@ import MenuLink from "./menuLink/menuLink";
 import { menuItems } from "@/data";
 // !===============>> Icons
 import { MdLogout } from "react-icons/md";
+import ButtenDemo from "../button/ButtenDemo";
 
 
 
@@ -26,7 +27,7 @@ export default function Sidebar() {
       </div>
       <ul className="list-none">
         {menuItems.map((item) => (
-          <li key={item.title} className="">
+          <li key={item.title}>
             <span className="text-textSoft font-bold text-[13px] my-[10px] mx-0">
               {item.title}
             </span>
@@ -36,6 +37,9 @@ export default function Sidebar() {
             ))}
           </li>
         ))}
+        <li className="pr-3">
+          <ButtenDemo title="تغییر حالت" />
+        </li>
       </ul>
       <button className="flex items-center gap-[10px] cursor-pointer rounded-[10px] p-5 my-[5px] mx-0 border-none text-text hover:bg-[#2e374a] w-full">
         <MdLogout />
