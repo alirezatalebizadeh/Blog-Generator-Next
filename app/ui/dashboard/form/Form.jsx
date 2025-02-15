@@ -48,7 +48,7 @@ const Form = () => {
             messages: [
                 {
                     role: "system",
-                    content: `You are a helpful assistant bot. You are a blog generator that is popular and smart. You can generate high-quality blogs based on the parameters provided. Pay close attention to the tone of the content and all other parameters (title, topic, keywords, audience, length, etc.). Make sure the content aligns with the tone requested and follows the user's input accurately.`
+                    content: `You are a helpful assistant bot. You are a blog generator that is popular and smart. You can generate high-quality blogs based on the parameters provided. Pay close attention to the tone of the content, length of the blog, and all other parameters (title, topic, keywords, audience, etc.). Make sure the content aligns with the tone requested, follows the user's input accurately, and adjusts the length of the blog according to the specified length (short, medium, long).` 
                 },
                 {
                     role: "user",
