@@ -44,10 +44,16 @@ const Form = () => {
 
         //! تبدیل داده‌های فرم به فرمت API
         const requestData = {
-            model: "gpt-3.5-turbo-0125", // مدل موردنظر
+            model: "gpt-3.5-turbo-0125", 
             messages: [
-                { role: "system", content: "You are a helpful assistant bot.you are a  generator blog .so popular and smart . i give you some paramet,after that you can make blog " },
-                { role: "user", content: ` .عنوان : ${formData.title}\nموضوع: ${formData.topic}\nکلمات کلیدی: ${formData.keywords}\nمخاطب: ${formData.audience}\nلحن: ${formData.tone}\nطول محتوا: ${formData.length}` }
+                {
+                    role: "system",
+                    content: `You are a helpful assistant bot. You are a blog generator that is popular and smart. You can generate high-quality blogs based on the parameters provided. Pay close attention to the tone of the content and all other parameters (title, topic, keywords, audience, length, etc.). Make sure the content aligns with the tone requested and follows the user's input accurately.`
+                },
+                {
+                    role: "user",
+                    content: `عنوان: ${formData.title}\nموضوع: ${formData.topic}\nکلمات کلیدی: ${formData.keywords}\nمخاطب: ${formData.audience}\nلحن: ${formData.tone}\nطول محتوا: ${formData.length}`
+                }
             ]
         };
 
