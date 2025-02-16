@@ -50,7 +50,6 @@ span {
 }
 
 /* زمانی که تم تاریک فعال باشد */
-body.dark p,
 body.dark h1,
 body.dark h2,
 body.dark h3,
@@ -58,7 +57,7 @@ body.dark h4,
 body.dark h5,
 body.dark h6,
 body.dark a {
-  color: white; /* تغییر رنگ به سفید زمانی که تم تاریک فعال است */
+  color: white !important; /* تغییر رنگ به سفید زمانی که تم تاریک فعال است */
 }
 
 body {

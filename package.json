@@ -20,7 +20,6 @@
     "babel-polyfill": "^6.26.0",
     "ckeditor5": "^44.2.0",
     "ckeditor5-premium-features": "^44.2.0",
-    "draft-js": "^0.11.7",
     "html2pdf.js": "^0.10.2",
     "jspdf": "^2.5.2",
     "markdown-it": "^14.1.0",

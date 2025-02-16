@@ -11,12 +11,12 @@ const Form = () => {
 
     const [generatedContent, setGeneratedContent] = useState("")
     const [formData, setFormData] = useState({
-        title: "گل محمدی ",
-        topic: "گل محمدی چیست؟",
-        keywords: "گل ، طبیعت",
-        audience: "همه افراد",
-        tone: "رسمی",
-        length: "long"
+        title: "",
+        topic: "",
+        keywords: "",
+        audience: "",
+        tone: "",
+        length: ""
     })
 
     //! مدیریت ورودی اینپون ها
