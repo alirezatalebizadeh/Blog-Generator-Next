@@ -1,14 +1,20 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import EditorDemo from '../editor/Editor'
+import CkEditorDemo from '../editor/CkEditorDemo'
+
+import dynamic from 'next/dynamic';
+
+const CustomEditor = dynamic( () => import( '@/app/ui/dashboard/editor/CkEditorDemo' ), { ssr: false } );
+
+
 const Form = () => {
 
     const [generatedContent, setGeneratedContent] = useState("")
     const [formData, setFormData] = useState({
-        title: "",
-        topic: "",
-        keywords: "",
-        audience: "",
+        title: "گل محمدی ",
+        topic: "گل محمدی چیست؟",
+        keywords: "گل ، طبیعت",
+        audience: "همه افراد",
         tone: "رسمی",
         length: "long"
     })
@@ -112,9 +118,9 @@ const Form = () => {
     return (
         <>
             <div className=" flex justify-center items-center w-full ">
-                <div className="flex flex-col md:flex-row gap-5 items-stretch justify-between container  my-4">
+                <div className="flex flex-col md:flex-col gap-5 items-stretch justify-between container  my-4">
 
-                    <div className="w-full px-8 my-4  lg:w-8/12 rounded-2xl shadow-2xl">
+                    <div className="w-full px-8 my-4  lg:w-12/12 rounded-2xl shadow-2xl">
                         {/*//! عنوان فرم */}
                         <div className="flex">
                             <h1 className="font-bold text-black dark:text-white uppercase text-2xl md:text-3xl">میخوای دقیقا چه محتوایی بسازی؟</h1>
@@ -194,11 +200,11 @@ const Form = () => {
                     </div>
 
 
-                    <div className="w-full lg:w-2/6 px-8 py-12 ml-auto bg-[#182237] rounded-2xl">
+                    <div className="w-full lg:w-12/6 px-8 py-12 ml-auto bg-[#182237] rounded-2xl">
 
                         <h2 className="text-white font-bold text-xl">محتوای تولید شده:</h2>
                         {/* <p className="text-white/50 text-base mt-4">{generatedContent || "هنوز محتوایی تولید نشده است."}</p> */}
-                        <EditorDemo content={generatedContent} />
+                        <CustomEditor content={generatedContent} />
                     </div>
 
                 </div >

@@ -85,9 +85,8 @@ const EditorDemo = ({ content }) => {
     };
 
     return (
-        <div className='bg-white py-5'>
+        <div className='bg-white rounded py-5'>
             <div className='flex flex-wrap gap-1 w-full mb-4 p-1'>
-                {/* دکمه‌های استایل */}
                 <button onClick={toggleBold} className='bg-black/70 p-1 px-2 text-white border-0 rounded' >B</button>
                 <button onClick={toggleItalic} className='bg-black/70 p-1 px-2 text-white border-0 rounded' >i</button>
                 <button onClick={toggleUnderline} className='bg-black/70 p-1 px-2 text-white border-0 rounded' >_</button>
