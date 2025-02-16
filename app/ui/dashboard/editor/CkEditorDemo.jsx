@@ -36,6 +36,15 @@ function CustomEditor({ content }) {
 
     return (
         <div className='text-right' style={{ direction: "rtl" }}>
+            <div className="flex items-center gap-5 my-2">
+                <h4 className='flex-1 text-white'>📌 محتوای ویرایشگر:</h4>
+                <button
+                    className="flex-1  uppercase text-sm font-bold tracking-wide bg-white hover:bg-[#182237] border hover:border-white text-black duration-150 hover:text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    onClick={handleDownloadPdf}
+                >
+                    دانلود به صورت PDF
+                </button>
+            </div>
             <CKEditor
                 editor={ClassicEditor}
                 data={editorData}
@@ -56,15 +65,7 @@ function CustomEditor({ content }) {
             />
 
             <div className="mt-4 p-3 bg-light border">
-                <div className="flex items-center">
-                    <button
-                        className="uppercase text-sm font-bold tracking-wide bg-[#182237] hover:bg-white hover:text-black duration-150 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        onClick={handleDownloadPdf}
-                    >
-                        دانلود به صورت PDF
-                    </button>
-                    <h4>📌 محتوای ویرایشگر:</h4>
-                </div>
+
             </div>
         </div>
     );

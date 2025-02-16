@@ -1,1 +1,1 @@
-create a blog generator using next js.
+create a blog generator using next

@@ -1,10 +1,8 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import CkEditorDemo from '../editor/CkEditorDemo'
-
 import dynamic from 'next/dynamic';
 
-const CustomEditor = dynamic( () => import( '@/app/ui/dashboard/editor/CkEditorDemo' ), { ssr: false } );
+const CustomEditor = dynamic(() => import('@/app/ui/dashboard/editor/CkEditorDemo'), { ssr: false });
 
 
 const Form = () => {
@@ -15,8 +13,8 @@ const Form = () => {
         topic: "",
         keywords: "",
         audience: "",
-        tone: "",
-        length: ""
+        tone: "رسمی",
+        length: "long",
     })
 
     //! مدیریت ورودی اینپون ها
@@ -86,7 +84,7 @@ const Form = () => {
 
             //! استخراج پاسخ مدل و نمایش آن
             const generatedText = result.choices?.[0]?.message?.content || "محتوایی دریافت نشد.";
-            await setGeneratedContent(generatedText);
+            setGeneratedContent(generatedText);
             console.log(generatedText);
 
             localStorage.setItem("generatedContent", generatedText);
@@ -107,11 +105,14 @@ const Form = () => {
 
     //! بارگذاری محتوای ذخیره‌شده از LocalStorage در ابتدای صفحه
     useEffect(() => {
-        const savedContent = localStorage.getItem("generatedContent");
-        if (savedContent) {
-            setGeneratedContent(savedContent);
+        if (typeof window !== "undefined") {
+            const savedContent = localStorage.getItem("generatedContent");
+            if (savedContent) {
+                setGeneratedContent(savedContent);
+            }
         }
     }, []);
+
 
 
 
