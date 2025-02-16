@@ -204,7 +204,6 @@ const Form = () => {
                     <div className="w-full lg:w-12/6 px-8 py-12 ml-auto bg-[#182237] rounded-2xl">
 
                         <h2 className="text-white font-bold text-xl">محتوای تولید شده:</h2>
-                        {/* <p className="text-white/50 text-base mt-4">{generatedContent || "هنوز محتوایی تولید نشده است."}</p> */}
                         <CustomEditor content={generatedContent} />
                     </div>
 
