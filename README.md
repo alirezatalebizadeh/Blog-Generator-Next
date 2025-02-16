@@ -1,4 +1,3 @@
-### `README.md` با ساختار دقیق پروژه شما  
 
 ```md
 # 🚀 Blog Generator با Next.js و OpenAI  
