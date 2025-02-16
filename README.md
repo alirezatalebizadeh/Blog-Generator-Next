@@ -1,5 +1,11 @@
 
+![Capture](https://github.com/user-attachments/assets/2a0bf29e-31fa-46f7-ab1c-a73fe2c31cef)
+![Capture1](https://github.com/user-attachments/assets/af52e76a-7e59-48a3-959c-16fbb4457cc9)
+
+
+
 ```md
+
 # 🚀 Blog Generator با Next.js و OpenAI  
 
 یک **مولد محتوای بلاگ** که با استفاده از **Next.js** و API مدل‌های زبانی OpenAI به کاربران اجازه می‌دهد تا مقالاتی با موضوعات دلخواه خود ایجاد کنند.  
