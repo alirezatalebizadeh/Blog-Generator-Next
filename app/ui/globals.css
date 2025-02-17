@@ -59,6 +59,9 @@ body.dark h6,
 body.dark a {
   color: white !important; /* تغییر رنگ به سفید زمانی که تم تاریک فعال است */
 }
+.content p {
+  line-height: 25px !important;
+}
 
 body {
   background-color: var(--bg);
