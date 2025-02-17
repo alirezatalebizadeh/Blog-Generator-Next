@@ -11,6 +11,7 @@ const CustomEditor = dynamic(
 const Form = () => {
     const [generatedContent, setGeneratedContent] = useState("");
     const [isLoading, setIsLoading] = useState(false)
+    const [progress, setProgress] = useState(false)
     const [formData, setFormData] = useState({
         title: "",
         topic: "",
@@ -43,6 +44,9 @@ const Form = () => {
         e.preventDefault();
         setIsLoading(true);
         setGeneratedContent("محتوا در حال تولید است...");
+        setProgress(1);
+
+
         const apiUrl =
             "https://api.metisai.ir/api/v1/wrapper/openai_chat_completion/chat/completions";
         const apiKey = process.env.NEXT_PUBLIC_APIKEY;
@@ -72,6 +76,10 @@ const Form = () => {
             ],
         };
 
+        const progressInterval = setInterval(() => {
+            setProgress((prev) => (prev < 95 ? prev + 5 : prev));
+        }, 500);
+
 
         try {
             const response = await fetch(apiUrl, {
@@ -91,7 +99,7 @@ const Form = () => {
             const generatedText = result.choices?.[0]?.message?.content || "محتوایی دریافت نشد.";
             setGeneratedContent(generatedText);
             localStorage.setItem("generatedContent", generatedText);
-
+            setProgress(100);
             // !پاک کردن فرم پس از ارسال
             setFormData({
                 title: "",
@@ -105,7 +113,8 @@ const Form = () => {
             console.error("خطا در درخواست:", error);
             setGeneratedContent("مشکلی در تولید محتوا رخ داد. لطفاً دوباره امتحان کنید.");
         } finally {
-            setIsLoading(false); // ✅ بعد از دریافت پاسخ، لودینگ غیرفعال شود
+            clearInterval(progressInterval);
+            setIsLoading(false);
         }
     };
 
@@ -202,7 +211,23 @@ const Form = () => {
 
                 {/* //!نمایش محتوای تولید شده */}
                 <div className="w-full px-8 py-12 bg-[#182237] rounded-2xl content">
-                    <h2 className="text-white font-bold text-xl">محتوای تولید شده:</h2>
+                    {isLoading && (
+                        <div className="w-full px-8 py-4">
+                            <div className="relative pt-1">
+                                <div className="flex mb-2 items-center justify-between">
+                                    <span className="text-xs font-semibold inline-block text-white">
+                                        تولید محتوا: {progress}%
+                                    </span>
+                                </div>
+                                <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-200">
+                                    <div
+                                        style={{ width: `${progress}%` }}
+                                        className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 transition-all duration-500"
+                                    ></div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                     <CustomEditor content={generatedContent} />
                 </div>
             </div>
